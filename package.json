@@ -1,0 +1,17 @@
+{
+  "name": "lyrics-scraper",
+  "version": "1.0.0",
+  "description": "Lyrics scraper using Puppeteer for audio files",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "puppeteer": "^24.20.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
