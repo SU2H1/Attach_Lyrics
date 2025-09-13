@@ -368,8 +368,60 @@ class LyricsApp:
         
         return {'title': filename, 'artist': ''}
     
+    def fetch_lyrics_fallback(self, title: str, artist: str) -> Optional[str]:
+        """Fallback lyrics fetching using direct requests (no Puppeteer)"""
+        from urllib.parse import quote
+        import re
+        
+        # Try Genius (works without JavaScript)
+        try:
+            clean_artist = re.sub(r'[^a-zA-Z0-9]', '-', artist).strip('-').lower()
+            clean_title = re.sub(r'[^a-zA-Z0-9]', '-', title).strip('-').lower()
+            url = f"https://genius.com/{clean_artist}-{clean_title}-lyrics"
+            
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            
+            if response.status_code == 200:
+                from bs4 import BeautifulSoup
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                # Look for lyrics containers
+                lyrics_divs = soup.find_all('div', {'data-lyrics-container': 'true'})
+                if lyrics_divs:
+                    lyrics_text = []
+                    for div in lyrics_divs:
+                        for br in div.find_all('br'):
+                            br.replace_with('\n')
+                        lyrics_text.append(div.get_text())
+                    return '\n'.join(lyrics_text).strip()
+        except Exception as e:
+            self.log(f"Genius fallback failed: {e}")
+        
+        # Try AZLyrics fallback
+        try:
+            clean_artist = re.sub(r'[^a-z0-9]', '', artist.lower())
+            clean_title = re.sub(r'[^a-z0-9]', '', title.lower())
+            url = f"https://www.azlyrics.com/lyrics/{clean_artist}/{clean_title}.html"
+            
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                # Find lyrics div (usually the largest div without class/id)
+                for div in soup.find_all('div'):
+                    if not div.get('class') and not div.get('id'):
+                        text = div.get_text().strip()
+                        if len(text) > 200 and '\n' in text:
+                            return text
+        except Exception as e:
+            self.log(f"AZLyrics fallback failed: {e}")
+        
+        return None
+    
     def fetch_lyrics(self, title: str, artist: str) -> Optional[str]:
-        """Fetch lyrics using Puppeteer server"""
+        """Fetch lyrics using Puppeteer server with fallback"""
+        # Try Puppeteer first
         try:
             response = requests.post(
                 f"{self.scraper_url}/scrape",
@@ -378,10 +430,15 @@ class LyricsApp:
             )
             if response.status_code == 200:
                 data = response.json()
-                return data.get('lyrics')
+                lyrics = data.get('lyrics')
+                if lyrics:
+                    return lyrics
         except Exception as e:
-            self.log(f"Error fetching lyrics: {e}")
-        return None
+            self.log(f"Puppeteer server error: {e}")
+            self.log("Falling back to direct scraping...")
+        
+        # Fallback to direct scraping
+        return self.fetch_lyrics_fallback(title, artist)
     
     def write_lyrics(self, filepath: Path, lyrics: str) -> bool:
         """Write lyrics to audio file"""
