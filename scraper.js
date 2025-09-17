@@ -30,6 +30,78 @@ class LyricsScraper {
             .trim();
     }
 
+    cleanLyrics(lyrics) {
+        if (!lyrics) return lyrics;
+
+        let cleaned = lyrics;
+
+        // Remove common unwanted patterns
+        const unwantedPatterns = [
+            // Contributors and translation info
+            /\d+\s*Contributors?/gi,
+            /Translations?\w*/gi,
+            /\d+\s*Embed/gi,
+
+            // Song title repetition at start (e.g., "Love in My Pocket Lyrics")
+            /^.*?Lyrics\s*/i,
+
+            // Language indicators
+            /Español|Français|Deutsch|Italiano|Português|العربية|中文|日本語|한국어|Русский/gi,
+
+            // Website metadata
+            /genius\.com|azlyrics\.com|lyrics\.com/gi,
+            /\bgenius\b|\bazlyrics\b/gi,
+
+            // Copyright and legal text
+            /©.*?\d{4}/g,
+            /All rights reserved/gi,
+            /Powered by.*$/gmi,
+
+            // Social media and sharing
+            /Share on Facebook|Tweet|Share|Like|Follow/gi,
+            /www\.|http[s]?:\/\//gi,
+
+            // Advertisement text
+            /Advertisement/gi,
+            /Sponsored/gi,
+
+            // Navigation elements
+            /Home|About|Contact|Privacy|Terms/gi,
+
+            // Common metadata patterns
+            /Album:|Artist:|Released:/gi,
+            /\bfrom the album\b/gi,
+
+            // Multiple spaces, tabs, newlines
+            /\s{3,}/g,
+            /\t+/g,
+            /\n{3,}/g
+        ];
+
+        // Apply all patterns
+        unwantedPatterns.forEach(pattern => {
+            cleaned = cleaned.replace(pattern, ' ');
+        });
+
+        // Clean up structure
+        cleaned = cleaned
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => {
+                // Remove lines that are likely metadata
+                if (line.length === 0) return false;
+                if (line.match(/^\d+$/)) return false; // Just numbers
+                if (line.match(/^[^\w]*$/)) return false; // Just punctuation
+                if (line.length < 3 && !line.match(/^[A-Za-z]+$/)) return false; // Very short non-word lines
+                return true;
+            })
+            .join('\n')
+            .replace(/\n{2,}/g, '\n\n') // Max 2 consecutive newlines
+            .trim();
+
+        return cleaned;
+    }
+
     async scrapeGenius(title, artist) {
         const page = await this.browser.newPage();
         try {
@@ -52,8 +124,8 @@ class LyricsScraper {
                 });
                 return text.trim();
             });
-            
-            return lyrics;
+
+            return this.cleanLyrics(lyrics);
         } catch (error) {
             console.log(`Genius scraping failed: ${error.message}`);
             return null;
@@ -75,7 +147,7 @@ class LyricsScraper {
             const lyrics = await page.evaluate(() => {
                 const comment = Array.from(document.childNodes)
                     .find(node => node.nodeType === 8 && node.textContent.includes('Usage of azlyrics'));
-                
+
                 if (comment) {
                     let nextElement = comment.nextSibling;
                     while (nextElement && nextElement.nodeType !== 1) {
@@ -85,7 +157,7 @@ class LyricsScraper {
                         return nextElement.innerText.trim();
                     }
                 }
-                
+
                 // Fallback method
                 const divs = document.querySelectorAll('div');
                 for (let div of divs) {
@@ -95,8 +167,8 @@ class LyricsScraper {
                 }
                 return null;
             });
-            
-            return lyrics;
+
+            return lyrics ? this.cleanLyrics(lyrics) : null;
         } catch (error) {
             console.log(`AZLyrics scraping failed: ${error.message}`);
             return null;
@@ -120,17 +192,17 @@ class LyricsScraper {
                 if (lyricsDiv) {
                     return lyricsDiv.innerText.trim();
                 }
-                
+
                 // Try alternative selector
                 const altDiv = document.querySelector('.PZPZlf');
                 if (altDiv) {
                     return altDiv.innerText.trim();
                 }
-                
+
                 return null;
             });
-            
-            return lyrics;
+
+            return lyrics ? this.cleanLyrics(lyrics) : null;
         } catch (error) {
             console.log(`Google scraping failed: ${error.message}`);
             return null;
