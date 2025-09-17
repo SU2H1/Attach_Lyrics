@@ -656,56 +656,187 @@ class LyricsApp:
 
         return cleaned.strip()
 
+    def has_japanese_chars(self, text: str) -> bool:
+        """Check if text contains Japanese characters"""
+        import re
+        return bool(re.search(r'[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]', text))
+
     def fetch_lyrics_fallback(self, title: str, artist: str) -> Optional[str]:
         """Fallback lyrics fetching using direct requests (no Puppeteer)"""
         from urllib.parse import quote
         import re
 
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+
+        # Check if this is a Japanese song
+        is_japanese = self.has_japanese_chars(title) or self.has_japanese_chars(artist)
+
+        if is_japanese:
+            # Try Japanese lyrics sites first
+            lyrics = self.try_japanese_sites(title, artist, headers)
+            if lyrics:
+                return lyrics
+
         # Try Genius (works without JavaScript)
         try:
-            clean_artist = re.sub(r'[^a-zA-Z0-9]', '-', artist).strip('-').lower()
-            clean_title = re.sub(r'[^a-zA-Z0-9]', '-', title).strip('-').lower()
-            url = f"https://genius.com/{clean_artist}-{clean_title}-lyrics"
+            # Better Unicode handling for Genius URLs
+            clean_artist = re.sub(r'[^\w\s-]', '', artist).strip().replace(' ', '-').lower()
+            clean_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-').lower()
 
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-            response = requests.get(url, headers=headers, timeout=10)
+            # Remove multiple dashes
+            clean_artist = re.sub(r'-+', '-', clean_artist).strip('-')
+            clean_title = re.sub(r'-+', '-', clean_title).strip('-')
 
-            if response.status_code == 200:
-                from bs4 import BeautifulSoup
-                soup = BeautifulSoup(response.text, 'html.parser')
+            if clean_artist and clean_title:
+                url = f"https://genius.com/{clean_artist}-{clean_title}-lyrics"
 
-                # Look for lyrics containers
-                lyrics_divs = soup.find_all('div', {'data-lyrics-container': 'true'})
-                if lyrics_divs:
-                    lyrics_text = []
-                    for div in lyrics_divs:
-                        for br in div.find_all('br'):
-                            br.replace_with('\n')
-                        lyrics_text.append(div.get_text())
-                    raw_lyrics = '\n'.join(lyrics_text).strip()
-                    return self.clean_lyrics(raw_lyrics)
+                response = requests.get(url, headers=headers, timeout=10)
+
+                if response.status_code == 200:
+                    from bs4 import BeautifulSoup
+                    soup = BeautifulSoup(response.text, 'html.parser')
+
+                    # Look for lyrics containers
+                    lyrics_divs = soup.find_all('div', {'data-lyrics-container': 'true'})
+                    if lyrics_divs:
+                        lyrics_text = []
+                        for div in lyrics_divs:
+                            for br in div.find_all('br'):
+                                br.replace_with('\n')
+                            lyrics_text.append(div.get_text())
+                        raw_lyrics = '\n'.join(lyrics_text).strip()
+                        if len(raw_lyrics) > 50:
+                            return self.clean_lyrics(raw_lyrics)
         except Exception as e:
-            self.log(f"Genius fallback failed: {e}")
+            pass  # Don't log every failure
 
         # Try AZLyrics fallback
         try:
             clean_artist = re.sub(r'[^a-z0-9]', '', artist.lower())
             clean_title = re.sub(r'[^a-z0-9]', '', title.lower())
-            url = f"https://www.azlyrics.com/lyrics/{clean_artist}/{clean_title}.html"
 
-            response = requests.get(url, headers=headers, timeout=10)
+            if clean_artist and clean_title:
+                url = f"https://www.azlyrics.com/lyrics/{clean_artist}/{clean_title}.html"
+
+                response = requests.get(url, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    from bs4 import BeautifulSoup
+                    soup = BeautifulSoup(response.text, 'html.parser')
+
+                    # Find lyrics div (usually the largest div without class/id)
+                    for div in soup.find_all('div'):
+                        if not div.get('class') and not div.get('id'):
+                            text = div.get_text().strip()
+                            if len(text) > 200 and '\n' in text:
+                                return self.clean_lyrics(text)
+        except Exception as e:
+            pass
+
+        return None
+
+    def try_japanese_sites(self, title: str, artist: str, headers: dict) -> Optional[str]:
+        """Try Japanese lyrics sites"""
+        from urllib.parse import quote
+
+        # Try Utaten.com
+        try:
+            # Utaten search approach
+            search_query = f"{artist} {title}".strip()
+            encoded_query = quote(search_query)
+            search_url = f"https://utaten.com/search/?search_text={encoded_query}"
+
+            response = requests.get(search_url, headers=headers, timeout=15)
             if response.status_code == 200:
+                from bs4 import BeautifulSoup
                 soup = BeautifulSoup(response.text, 'html.parser')
 
-                # Find lyrics div (usually the largest div without class/id)
-                for div in soup.find_all('div'):
-                    if not div.get('class') and not div.get('id'):
-                        text = div.get_text().strip()
-                        if len(text) > 200 and '\n' in text:
-                            return self.clean_lyrics(text)
+                # Look for search results and try first match
+                links = soup.find_all('a', href=True)
+                for link in links:
+                    href = link.get('href', '')
+                    if '/lyric/' in href and 'utaten.com' in href:
+                        lyrics = self.fetch_utaten_lyrics(href, headers)
+                        if lyrics:
+                            return lyrics
+                        break  # Only try first result
         except Exception as e:
-            self.log(f"AZLyrics fallback failed: {e}")
+            pass
 
+        # Try J-Lyric.net
+        try:
+            # J-Lyric approach - direct search
+            search_query = f"{title} {artist}".strip()
+            encoded_query = quote(search_query.encode('utf-8'))
+            search_url = f"http://search.j-lyric.net/index.php?kt={encoded_query}"
+
+            response = requests.get(search_url, headers=headers, timeout=15)
+            if response.status_code == 200:
+                from bs4 import BeautifulSoup
+                soup = BeautifulSoup(response.content, 'html.parser', from_encoding='utf-8')
+
+                # Look for lyric links
+                links = soup.find_all('a', href=True)
+                for link in links:
+                    href = link.get('href', '')
+                    if '/lyric.php?' in href:
+                        full_url = f"http://j-lyric.net{href}" if href.startswith('/') else href
+                        lyrics = self.fetch_jlyric_lyrics(full_url, headers)
+                        if lyrics:
+                            return lyrics
+                        break  # Only try first result
+        except Exception as e:
+            pass
+
+        return None
+
+    def fetch_utaten_lyrics(self, url: str, headers: dict) -> Optional[str]:
+        """Fetch lyrics from Utaten page"""
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                from bs4 import BeautifulSoup
+                soup = BeautifulSoup(response.text, 'html.parser')
+
+                # Utaten lyrics container
+                lyrics_div = soup.find('div', class_='lyric')
+                if not lyrics_div:
+                    lyrics_div = soup.find('div', {'id': 'lyric'})
+
+                if lyrics_div:
+                    # Replace br tags with newlines
+                    for br in lyrics_div.find_all('br'):
+                        br.replace_with('\n')
+
+                    lyrics = lyrics_div.get_text().strip()
+                    if len(lyrics) > 50:
+                        return self.clean_lyrics(lyrics)
+        except Exception as e:
+            pass
+        return None
+
+    def fetch_jlyric_lyrics(self, url: str, headers: dict) -> Optional[str]:
+        """Fetch lyrics from J-Lyric page"""
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                from bs4 import BeautifulSoup
+                soup = BeautifulSoup(response.content, 'html.parser', from_encoding='utf-8')
+
+                # J-Lyric lyrics container
+                lyrics_div = soup.find('p', {'id': 'Lyric'})
+                if not lyrics_div:
+                    lyrics_div = soup.find('div', {'id': 'Lyric'})
+
+                if lyrics_div:
+                    # Replace br tags with newlines
+                    for br in lyrics_div.find_all('br'):
+                        br.replace_with('\n')
+
+                    lyrics = lyrics_div.get_text().strip()
+                    if len(lyrics) > 50:
+                        return self.clean_lyrics(lyrics)
+        except Exception as e:
+            pass
         return None
     
     def fetch_lyrics(self, title: str, artist: str) -> Optional[str]:

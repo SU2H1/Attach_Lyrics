@@ -220,25 +220,85 @@ class LyricsScraper {
         }
     }
 
+    hasJapaneseChars(text) {
+        return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(text);
+    }
+
+    async scrapeUtaten(title, artist) {
+        let page = null;
+        try {
+            page = await this.browser.newPage();
+            await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
+
+            const searchQuery = `${artist} ${title}`.trim();
+            const encodedQuery = encodeURIComponent(searchQuery);
+            const searchUrl = `https://utaten.com/search/?search_text=${encodedQuery}`;
+
+            await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+            // Look for first lyrics link
+            const lyricsLink = await page.$('a[href*="/lyric/"]');
+            if (lyricsLink) {
+                const href = await page.evaluate(el => el.href, lyricsLink);
+                await page.goto(href, { waitUntil: 'domcontentloaded', timeout: 10000 });
+
+                // Extract lyrics
+                const lyrics = await page.evaluate(() => {
+                    const lyricsDiv = document.querySelector('.lyric') || document.querySelector('#lyric');
+                    if (lyricsDiv) {
+                        return lyricsDiv.innerText.trim();
+                    }
+                    return null;
+                });
+
+                return lyrics;
+            }
+        } catch (error) {
+            console.log(`Utaten scraping failed: ${error.message}`);
+            return null;
+        } finally {
+            if (page) {
+                try {
+                    await page.close();
+                } catch (e) {
+                    console.log('Error closing Utaten page:', e.message);
+                }
+            }
+        }
+    }
+
     async scrapeLyrics(title, artist) {
         console.log(`Searching for: ${artist} - ${title}`);
-        
-        // Try different sources
-        const sources = [
-            { name: 'Genius', method: this.scrapeGenius.bind(this) },
-            { name: 'AZLyrics', method: this.scrapeAZLyrics.bind(this) },
-            { name: 'Google', method: this.scrapeGoogle.bind(this) }
-        ];
-        
+
+        // Check if this is a Japanese song
+        const isJapanese = this.hasJapaneseChars(title) || this.hasJapaneseChars(artist);
+
+        let sources;
+        if (isJapanese) {
+            // For Japanese songs, try Japanese sites first
+            sources = [
+                { name: 'Utaten', method: this.scrapeUtaten.bind(this) },
+                { name: 'Genius', method: this.scrapeGenius.bind(this) },
+                { name: 'Google', method: this.scrapeGoogle.bind(this) }
+            ];
+        } else {
+            // For non-Japanese songs, use original order
+            sources = [
+                { name: 'Genius', method: this.scrapeGenius.bind(this) },
+                { name: 'AZLyrics', method: this.scrapeAZLyrics.bind(this) },
+                { name: 'Google', method: this.scrapeGoogle.bind(this) }
+            ];
+        }
+
         for (const source of sources) {
             console.log(`Trying ${source.name}...`);
             const lyrics = await source.method(title, artist);
-            if (lyrics && lyrics.length > 100) {
+            if (lyrics && lyrics.length > 50) {
                 console.log(`Found lyrics from ${source.name}`);
                 return lyrics;
             }
         }
-        
+
         return null;
     }
 }
