@@ -103,17 +103,20 @@ class LyricsScraper {
     }
 
     async scrapeGenius(title, artist) {
-        const page = await this.browser.newPage();
+        let page = null;
         try {
+            page = await this.browser.newPage();
+            await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+
             const cleanArtist = this.cleanText(artist).replace(/\s+/g, '-');
             const cleanTitle = this.cleanText(title).replace(/\s+/g, '-');
             const url = `https://genius.com/${cleanArtist}-${cleanTitle}-lyrics`;
-            
-            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-            
+
+            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
             // Wait for lyrics container
-            await page.waitForSelector('[data-lyrics-container="true"]', { timeout: 5000 });
-            
+            await page.waitForSelector('[data-lyrics-container="true"]', { timeout: 8000 });
+
             const lyrics = await page.evaluate(() => {
                 const containers = document.querySelectorAll('[data-lyrics-container="true"]');
                 let text = '';
@@ -130,7 +133,13 @@ class LyricsScraper {
             console.log(`Genius scraping failed: ${error.message}`);
             return null;
         } finally {
-            await page.close();
+            if (page) {
+                try {
+                    await page.close();
+                } catch (e) {
+                    console.log('Error closing page:', e.message);
+                }
+            }
         }
     }
 
@@ -260,10 +269,34 @@ app.post('/scrape', async (req, res) => {
             scraper = new LyricsScraper();
             await scraper.init();
         }
+
+        // Check if browser is still alive
+        if (!scraper.browser || !scraper.browser.isConnected()) {
+            console.log('Browser disconnected, reinitializing...');
+            await scraper.close();
+            scraper = new LyricsScraper();
+            await scraper.init();
+        }
+
         const lyrics = await scraper.scrapeLyrics(title, artist);
         res.json({ lyrics: lyrics || null });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.log('Scraping error:', error.message);
+
+        // If browser crashed, try to reinitialize
+        if (error.message.includes('Target closed') || error.message.includes('Connection closed')) {
+            try {
+                console.log('Browser crashed, reinitializing...');
+                await scraper.close();
+                scraper = new LyricsScraper();
+                await scraper.init();
+                res.json({ lyrics: null, error: 'Browser restarted, try again' });
+            } catch (reinitError) {
+                res.status(500).json({ error: 'Browser restart failed: ' + reinitError.message });
+            }
+        } else {
+            res.status(500).json({ error: error.message });
+        }
     }
 });
 

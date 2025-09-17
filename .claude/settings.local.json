@@ -15,7 +15,11 @@
       "Bash(del:*)",
       "Bash(rm:*)",
       "Bash(git push:*)",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []
