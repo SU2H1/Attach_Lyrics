@@ -304,17 +304,13 @@ class LyricsApp:
         elif len(self.selected_files) == 1:
             path = Path(self.selected_files[0])
             if path.is_dir():
-                # Count audio files in directory
-                audio_files = self.get_audio_files()
-                count = len(audio_files)
-                self.files_label.config(text=f"Folder: {path.name} ({count} audio files found)", foreground="black")
+                # Don't count files immediately for performance
+                self.files_label.config(text=f"Folder: {path.name} (scanning will start when processing)", foreground="black")
             else:
                 self.files_label.config(text=f"File: {path.name}", foreground="black")
         else:
-            # Count total audio files
-            audio_files = self.get_audio_files()
-            total_audio = len(audio_files)
-            self.files_label.config(text=f"{len(self.selected_files)} items selected ({total_audio} audio files)", foreground="black")
+            # Don't count files immediately for performance
+            self.files_label.config(text=f"{len(self.selected_files)} items selected", foreground="black")
     
     def log(self, message):
         """Add message to progress text"""
@@ -334,35 +330,52 @@ class LyricsApp:
         except:
             return False
     
-    def get_audio_files(self) -> List[Path]:
-        """Get all audio files based on selection"""
+    def get_audio_files(self, max_files: int = None, show_progress: bool = True) -> List[Path]:
+        """Get all audio files based on selection with optimized scanning"""
         audio_files = []
-        
+
         for item in self.selected_files:
             path = Path(item)
             if path.is_file():
-                if self.is_audio_file(path):
+                if self.is_audio_file_quick(path):
                     audio_files.append(path)
             elif path.is_dir():
-                # Try common audio extensions first for speed
-                common_exts = ['.mp3', '.m4a', '.mp4', '.flac', '.ogg', '.wav', '.wma', '.aac', '.opus']
-                found_files = set()
-                
-                # First pass: common extensions
+                if show_progress:
+                    self.log(f"Scanning folder: {path.name}...")
+                    self.status_var.set("Scanning for audio files...")
+
+                # Only scan by extension for performance
+                common_exts = ['.mp3', '.m4a', '.mp4', '.flac', '.ogg', '.wav', '.wma', '.aac', '.opus', '.webm', '.mkv']
+
                 for ext in common_exts:
-                    for file in path.rglob(f'*{ext}'):
-                        if file not in found_files and self.is_audio_file(file):
-                            audio_files.append(file)
-                            found_files.add(file)
-                
-                # Second pass: check all other files
-                for file in path.rglob('*'):
-                    if file.is_file() and file not in found_files:
-                        if self.is_audio_file(file):
-                            audio_files.append(file)
-                            found_files.add(file)
-        
+                    try:
+                        # Use glob instead of rglob for better control
+                        for file in path.rglob(f'*{ext}'):
+                            if file.is_file():
+                                audio_files.append(file)
+
+                                # Check file limit
+                                if max_files and len(audio_files) >= max_files:
+                                    if show_progress:
+                                        self.log(f"Reached file limit of {max_files} files")
+                                    return audio_files
+
+                                # Show progress every 100 files
+                                if show_progress and len(audio_files) % 100 == 0:
+                                    self.status_var.set(f"Found {len(audio_files)} audio files...")
+                                    self.root.update_idletasks()
+                    except Exception as e:
+                        if show_progress:
+                            self.log(f"Error scanning {ext} files: {e}")
+                        continue
+
         return audio_files
+
+    def is_audio_file_quick(self, filepath: Path) -> bool:
+        """Quick check if file is audio based on extension only"""
+        audio_extensions = {'.mp3', '.m4a', '.mp4', '.flac', '.ogg', '.wav', '.wma',
+                          '.aac', '.opus', '.webm', '.mkv', '.avi', '.wv', '.ape'}
+        return filepath.suffix.lower() in audio_extensions
     
     def read_metadata(self, filepath: Path) -> dict:
         """Read metadata from audio file"""
@@ -708,11 +721,16 @@ class LyricsApp:
 
     def process_files(self):
         """Process all selected files"""
-        audio_files = self.get_audio_files()
+        self.log("Scanning for audio files...")
+        self.status_var.set("Scanning for audio files...")
+
+        # Get audio files with progress
+        audio_files = self.get_audio_files(show_progress=True)
         total = len(audio_files)
 
         if total == 0:
             self.log("No audio files found with selected extensions")
+            self.status_var.set("No audio files found")
             return
 
         # Reset stats for new processing session
@@ -720,6 +738,10 @@ class LyricsApp:
 
         self.log(f"Found {total} audio files to process")
         self.log("=" * 50)
+
+        # Warn if very large number of files
+        if total > 1000:
+            self.log(f"⚠ Large library detected ({total} files). This may take a while...")
 
         success = 0
         skipped = 0
