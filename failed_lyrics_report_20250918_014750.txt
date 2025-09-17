@@ -1,0 +1,205 @@
+============================================================
+FAILED LYRICS REPORT
+Generated: 2025-09-18 01:47:50
+============================================================
+
+Total failed files: 39
+
+
+NO LYRICS FOUND ONLINE (39 files):
+----------------------------------------
+  File: 01 Part.1.mp3
+    Title: 青春ブタ野郎はビーチクイーンの夢を見ない
+    Artist: 梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV：久保ユリカ）
+    Path: E:\Music\梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV\青春ブタ野郎はビーチクイーンの夢を見ない\01 Part.1.mp3
+
+  File: 02 Part.2.mp3
+    Title: 青春ブタ野郎はビーチクイーンの夢を見ない
+    Artist: 梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV：久保ユリカ）
+    Path: E:\Music\梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV\青春ブタ野郎はビーチクイーンの夢を見ない\02 Part.2.mp3
+
+  File: 03 Part.3.mp3
+    Title: 青春ブタ野郎はビーチクイーンの夢を見ない
+    Artist: 梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV：久保ユリカ）
+    Path: E:\Music\梓川咲太（CV：石川界人）、桜島麻衣（CV：瀬戸麻沙美）、古賀朋絵（CV：東山奈央）、双葉理央（CV：種﨑敦美）、豊浜のどか（CV：内田真礼）、梓川かえで（CV\青春ブタ野郎はビーチクイーンの夢を見ない\03 Part.3.mp3
+
+  File: 1. 70 Unit 28 VOCABULARY & EXPRESSIONS 2.mp3
+    Title: コーヒーが冷めないうちに
+    Artist: 白川 周作
+    Path: E:\Music\川口 俊和\コーヒーが冷めないうちに\1. 70 Unit 28 VOCABULARY & EXPRESSIONS 2.mp3
+
+  File: 2. Shopping.mp3
+    Title: この嘘がばれないうちに
+    Artist: 白川 周作
+    Path: E:\Music\川口 俊和\コーヒーが冷めないうちに\2. Shopping.mp3
+
+  File: 3. 08_Scene_4_試験や成績評価について質問する_練習しよう.mp3
+    Title: 思い出が消えないうちに
+    Artist: 白川 周作
+    Path: E:\Music\川口 俊和\コーヒーが冷めないうちに\3. 08_Scene_4_試験や成績評価について質問する_練習しよう.mp3
+
+  File: 4. Beethoven_ Violin Concerto In D, Op. 61 - 2. Larghetto.mp3
+    Title: さよならも言えないうちに
+    Artist: 白川 周作
+    Path: E:\Music\川口 俊和\コーヒーが冷めないうちに\4. Beethoven_ Violin Concerto In D, Op. 61 - 2. Larghetto.mp3
+
+  File: 5. La Bataille.mp3
+    Title: やさしさを忘れぬうちに
+    Artist: 松下 木聖
+    Path: E:\Music\川口 俊和\コーヒーが冷めないうちに\5. La Bataille.mp3
+
+  File: 01 Disrupted Original.mp3
+    Title: Disrupted Original
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\01 Disrupted Original.mp3
+
+  File: 02 Combine  Advisory.mp3
+    Title: Combine  Advisory
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\02 Combine  Advisory.mp3
+
+  File: 03 Guard Down.mp3
+    Title: Guard Down
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\03 Guard Down.mp3
+
+  File: 04 Darkness at Noon.mp3
+    Title: Darkness at Noon
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\04 Darkness at Noon.mp3
+
+  File: 05 Self Destruction.mp3
+    Title: Self Destruction
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\05 Self Destruction.mp3
+
+  File: 06 Eine Kleiner Elevatormuzik.mp3
+    Title: Eine Kleiner Elevatormuzik
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\06 Eine Kleiner Elevatormuzik.mp3
+
+  File: 07 What Kind Of Hospital Is This.mp3
+    Title: What Kind Of Hospital Is This
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\07 What Kind Of Hospital Is This.mp3
+
+  File: 08 Infraradiant.mp3
+    Title: Infraradiant
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\08 Infraradiant.mp3
+
+  File: 09 Decay Mode.mp3
+    Title: Decay Mode
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\09 Decay Mode.mp3
+
+  File: 10 Penultimatum.mp3
+    Title: Penultimatum
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 1\10 Penultimatum.mp3
+
+  File: 01 No One Rides For Free.mp3
+    Title: No One Rides For Free
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\01 No One Rides For Free.mp3
+
+  File: 02 Dark Interval.mp3
+    Title: Dark Interval
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\02 Dark Interval.mp3
+
+  File: 03 Nectarium.mp3
+    Title: Nectarium
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\03 Nectarium.mp3
+
+  File: 04 Extinction Event Horizon.mp3
+    Title: Extinction Event Horizon
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\04 Extinction Event Horizon.mp3
+
+  File: 05 Vortal Combat.mp3
+    Title: Vortal Combat
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\05 Vortal Combat.mp3
+
+  File: 06 Sector Sweep.mp3
+    Title: Sector Sweep
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\06 Sector Sweep.mp3
+
+  File: 07 Shu'ulathoi.mp3
+    Title: Shu'ulathoi
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\07 Shu'ulathoi.mp3
+
+  File: 08 Last Legs.mp3
+    Title: Last Legs
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\08 Last Legs.mp3
+
+  File: 09 Abandoned In Place.mp3
+    Title: Abandoned In Place
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\09 Abandoned In Place.mp3
+
+  File: 10 Inhuman Frequency.mp3
+    Title: Inhuman Frequency
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\10 Inhuman Frequency.mp3
+
+  File: 11 Hunting Party.mp3
+    Title: Hunting Party
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\11 Hunting Party.mp3
+
+  File: 12 Eon Trap.mp3
+    Title: Eon Trap
+    Artist: Valve Studio Orchestra
+    Path: E:\Music\Valve Studio Orchestra\Half Life 2_ Episode 2\12 Eon Trap.mp3
+
+  File: 1. Title.mp3
+    Title: Title
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\1. Title.mp3
+
+  File: 2. WHITE SPACE.mp3
+    Title: WHITE SPACE
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\2. WHITE SPACE.mp3
+
+  File: 3. Lost at a Sleepover.mp3
+    Title: Lost at a Sleepover
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\3. Lost at a Sleepover.mp3
+
+  File: 4. Spaces In-Between.mp3
+    Title: Spaces In-Between
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\4. Spaces In-Between.mp3
+
+  File: 5. By Your Side.mp3
+    Title: By Your Side.
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\5. By Your Side.mp3
+
+  File: 6. Let’s Get Together Now!.mp3
+    Title: Let’s Get Together Now!
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\6. Let’s Get Together Now!.mp3
+
+  File: 7. 100 Sunny.mp3
+    Title: 100 Sunny
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\7. 100 Sunny.mp3
+
+  File: 8. Trouble Brewing.mp3
+    Title: Trouble Brewing
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\8. Trouble Brewing.mp3
+
+  File: 9. Push & Shove.mp3
+    Title: Push & Shove
+    Artist: OMORI
+    Path: E:\Music\OMORI\Omori_ Original Game Soundtrack, Pt_1\9. Push & Shove.mp3
+

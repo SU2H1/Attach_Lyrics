@@ -14,7 +14,8 @@
       "Bash(del test_lyrics_cleaning.py test_cleaning.js)",
       "Bash(del:*)",
       "Bash(rm:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npm --version)"
     ],
     "deny": [],
     "ask": []

@@ -209,18 +209,26 @@ class LyricsApp:
                 )
 
                 # Wait for server to start
-                max_attempts = 10
+                max_attempts = 15  # Increased attempts
                 for attempt in range(max_attempts):
-                    time.sleep(1)
+                    time.sleep(2)  # Longer sleep between attempts
                     try:
-                        response = requests.post(f"{self.scraper_url}/init", timeout=3)
-                        if response.status_code == 200:
-                            self.log("✓ Puppeteer server started successfully")
-                            self.server_ready = True
-                            self.server_status_label.config(text="Server: Ready ✓", foreground="green")
-                            self.status_var.set("Server running - Ready to process files")
-                            return
-                    except:
+                        # Test if server is responding
+                        response = requests.get(f"{self.scraper_url}", timeout=5)
+                        if response.status_code == 404:  # Server is up, just no route
+                            # Now try to initialize
+                            init_response = requests.post(f"{self.scraper_url}/init", timeout=10)
+                            if init_response.status_code == 200:
+                                self.log("✓ Puppeteer server started successfully")
+                                self.server_ready = True
+                                self.server_status_label.config(text="Server: Ready ✓", foreground="green")
+                                self.status_var.set("Server running - Ready to process files")
+                                return
+                    except requests.exceptions.ConnectionError:
+                        self.log(f"  Waiting for server... (attempt {attempt + 1}/{max_attempts})")
+                        continue
+                    except Exception as e:
+                        self.log(f"  Server check error: {e}")
                         continue
 
                 # Server didn't start properly
@@ -588,24 +596,37 @@ class LyricsApp:
     
     def fetch_lyrics(self, title: str, artist: str) -> Optional[str]:
         """Fetch lyrics using Puppeteer server with fallback"""
-        # Try Puppeteer first
-        try:
-            response = requests.post(
-                f"{self.scraper_url}/scrape",
-                json={'title': title, 'artist': artist},
-                timeout=30
-            )
-            if response.status_code == 200:
-                data = response.json()
-                lyrics = data.get('lyrics')
-                if lyrics:
-                    # Lyrics from Puppeteer are already cleaned on the server side
-                    return lyrics
-        except Exception as e:
-            self.log(f"Puppeteer server error: {e}")
-            self.log("Falling back to direct scraping...")
+        # Try Puppeteer first if server is ready
+        if self.server_ready:
+            try:
+                response = requests.post(
+                    f"{self.scraper_url}/scrape",
+                    json={'title': title, 'artist': artist},
+                    timeout=30
+                )
+                if response.status_code == 200:
+                    data = response.json()
+                    lyrics = data.get('lyrics')
+                    if lyrics and len(lyrics.strip()) > 50:  # Ensure we got meaningful lyrics
+                        return lyrics
+                elif response.status_code >= 500:
+                    # Server error, mark as not ready
+                    self.server_ready = False
+                    self.server_status_label.config(text="Server: Error", foreground="red")
+            except requests.exceptions.ConnectionError:
+                # Server died, mark as not ready
+                self.server_ready = False
+                self.server_status_label.config(text="Server: Disconnected", foreground="red")
+                self.log("Server connection lost, using fallback...")
+            except Exception as e:
+                self.log(f"Puppeteer error: {e}")
 
-        # Fallback to direct scraping
+        # Fallback to direct scraping (don't log error if server wasn't ready)
+        if not self.server_ready:
+            pass  # Server wasn't available, use fallback silently
+        else:
+            self.log("Puppeteer failed, using fallback...")
+
         return self.fetch_lyrics_fallback(title, artist)
     
     def write_lyrics(self, filepath: Path, lyrics: str) -> bool:
@@ -719,10 +740,30 @@ class LyricsApp:
         self.show_failed_button.config(state=tk.DISABLED)
         self.update_stats_display()
 
+    def check_server_health(self):
+        """Check if Puppeteer server is still alive"""
+        if not self.server_ready:
+            return False
+
+        try:
+            response = requests.post(f"{self.scraper_url}/init", timeout=3)
+            return response.status_code == 200
+        except:
+            self.server_ready = False
+            self.server_status_label.config(text="Server: Disconnected", foreground="red")
+            return False
+
     def process_files(self):
         """Process all selected files"""
         self.log("Scanning for audio files...")
         self.status_var.set("Scanning for audio files...")
+
+        # Check server health before starting
+        if self.server_ready:
+            if self.check_server_health():
+                self.log("✓ Puppeteer server is ready")
+            else:
+                self.log("⚠ Puppeteer server not responding, using fallback mode")
 
         # Get audio files with progress
         audio_files = self.get_audio_files(show_progress=True)
