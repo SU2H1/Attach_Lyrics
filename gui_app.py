@@ -105,7 +105,7 @@ class LyricsApp:
         self.drop_frame = tk.Frame(selection_frame, bg='#f0f0f0', relief=tk.SUNKEN, bd=2, height=100)
         self.drop_frame.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=5, pady=5)
         
-        self.drop_label = tk.Label(self.drop_frame, text="🎵 Drag & Drop Files or Folders Here 🎵\n\nor use buttons below",
+        self.drop_label = tk.Label(self.drop_frame, text="🎵 Drag & Drop Files or Folders Here 🎵\n\nSupports multiple files and folders\nor use buttons below",
                                   bg='#f0f0f0', font=('Arial', 12))
         self.drop_label.pack(expand=True, pady=20)
         
@@ -120,10 +120,11 @@ class LyricsApp:
         # Buttons
         button_frame = ttk.Frame(selection_frame)
         button_frame.grid(row=1, column=0, pady=(10, 0))
-        
-        ttk.Button(button_frame, text="Select Files", command=self.select_files).grid(row=0, column=0, padx=5)
-        ttk.Button(button_frame, text="Select Folder", command=self.select_folder).grid(row=0, column=1, padx=5)
-        ttk.Button(button_frame, text="Clear Selection", command=self.clear_selection).grid(row=0, column=2, padx=5)
+
+        ttk.Button(button_frame, text="Select Files", command=self.select_files).grid(row=0, column=0, padx=3)
+        ttk.Button(button_frame, text="Select Folder", command=self.select_folder).grid(row=0, column=1, padx=3)
+        ttk.Button(button_frame, text="Multiple Folders", command=self.select_multiple_folders).grid(row=0, column=2, padx=3)
+        ttk.Button(button_frame, text="Clear Selection", command=self.clear_selection).grid(row=0, column=3, padx=3)
         
         # Selected files label
         self.files_label = ttk.Label(selection_frame, text="No files selected", foreground="gray")
@@ -317,7 +318,7 @@ class LyricsApp:
     def on_drag_leave(self, event):
         """Handle drag leave event"""
         self.drop_frame.config(bg='#f0f0f0')
-        self.drop_label.config(bg='#f0f0f0', text="🎵 Drag & Drop Files or Folders Here 🎵\n\nor use buttons below")
+        self.drop_label.config(bg='#f0f0f0', text="🎵 Drag & Drop Files or Folders Here 🎵\n\nSupports multiple files and folders\nor use buttons below")
 
     def on_drop(self, event):
         """Handle drag and drop events"""
@@ -364,6 +365,82 @@ class LyricsApp:
             self.selected_files = [folder]
             self.update_file_label()
             self.start_button.config(state=tk.NORMAL)
+
+    def select_multiple_folders(self):
+        """Select multiple folders using a custom dialog"""
+        # Create a new window for multiple folder selection
+        folder_window = tk.Toplevel(self.root)
+        folder_window.title("Select Multiple Folders")
+        folder_window.geometry("700x500")
+        folder_window.transient(self.root)
+        folder_window.grab_set()
+
+        # Main frame
+        main_frame = ttk.Frame(folder_window, padding="10")
+        main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        folder_window.columnconfigure(0, weight=1)
+        folder_window.rowconfigure(0, weight=1)
+        main_frame.columnconfigure(0, weight=1)
+        main_frame.rowconfigure(1, weight=1)
+
+        # Instructions
+        instructions = ttk.Label(main_frame, text="Select multiple folders containing audio files:")
+        instructions.grid(row=0, column=0, sticky=tk.W, pady=(0, 10))
+
+        # Listbox to show selected folders
+        list_frame = ttk.Frame(main_frame)
+        list_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+        list_frame.columnconfigure(0, weight=1)
+        list_frame.rowconfigure(0, weight=1)
+
+        folder_listbox = tk.Listbox(list_frame, height=15)
+        folder_listbox.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        # Scrollbar for listbox
+        scrollbar = ttk.Scrollbar(list_frame, orient=tk.VERTICAL, command=folder_listbox.yview)
+        scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        folder_listbox.configure(yscrollcommand=scrollbar.set)
+
+        # Store selected folders
+        selected_folders = []
+
+        def add_folder():
+            folder = filedialog.askdirectory(title="Select Folder to Add")
+            if folder and folder not in selected_folders:
+                selected_folders.append(folder)
+                folder_listbox.insert(tk.END, folder)
+
+        def remove_folder():
+            selection = folder_listbox.curselection()
+            if selection:
+                index = selection[0]
+                folder_listbox.delete(index)
+                selected_folders.pop(index)
+
+        def confirm_selection():
+            if selected_folders:
+                self.selected_files = selected_folders.copy()
+                self.update_file_label()
+                self.start_button.config(state=tk.NORMAL)
+            folder_window.destroy()
+
+        def cancel_selection():
+            folder_window.destroy()
+
+        # Buttons
+        button_frame = ttk.Frame(main_frame)
+        button_frame.grid(row=2, column=0, pady=(10, 0))
+
+        ttk.Button(button_frame, text="Add Folder", command=add_folder).grid(row=0, column=0, padx=5)
+        ttk.Button(button_frame, text="Remove Selected", command=remove_folder).grid(row=0, column=1, padx=5)
+        ttk.Button(button_frame, text="OK", command=confirm_selection).grid(row=0, column=2, padx=20)
+        ttk.Button(button_frame, text="Cancel", command=cancel_selection).grid(row=0, column=3, padx=5)
+
+        # Center the window
+        folder_window.update_idletasks()
+        x = (folder_window.winfo_screenwidth() // 2) - (folder_window.winfo_width() // 2)
+        y = (folder_window.winfo_screenheight() // 2) - (folder_window.winfo_height() // 2)
+        folder_window.geometry(f"+{x}+{y}")
     
     def clear_selection(self):
         self.selected_files = []
@@ -381,8 +458,26 @@ class LyricsApp:
             else:
                 self.files_label.config(text=f"File: {path.name}", foreground="black")
         else:
-            # Don't count files immediately for performance
-            self.files_label.config(text=f"{len(self.selected_files)} items selected", foreground="black")
+            # Check if all selected items are directories
+            paths = [Path(item) for item in self.selected_files]
+            all_dirs = all(path.is_dir() for path in paths)
+            all_files = all(path.is_file() for path in paths)
+
+            if all_dirs:
+                if len(self.selected_files) <= 3:
+                    # Show folder names for small selections
+                    folder_names = [path.name for path in paths]
+                    self.files_label.config(text=f"Folders: {', '.join(folder_names)}", foreground="black")
+                else:
+                    # Show count for large selections
+                    self.files_label.config(text=f"{len(self.selected_files)} folders selected", foreground="black")
+            elif all_files:
+                self.files_label.config(text=f"{len(self.selected_files)} files selected", foreground="black")
+            else:
+                # Mixed selection
+                dir_count = sum(1 for path in paths if path.is_dir())
+                file_count = len(paths) - dir_count
+                self.files_label.config(text=f"{dir_count} folders, {file_count} files selected", foreground="black")
     
     def log(self, message):
         """Add message to progress text"""
