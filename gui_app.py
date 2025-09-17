@@ -43,6 +43,19 @@ class LyricsApp:
         self.stats = {'success': 0, 'failed': 0, 'skipped': 0}
         self.failed_files = []  # Track files that failed to get lyrics
 
+        # File type selection variables
+        self.file_types = {
+            'mp3': tk.BooleanVar(value=True),
+            'm4a': tk.BooleanVar(value=True),
+            'flac': tk.BooleanVar(value=True),
+            'ogg': tk.BooleanVar(value=True),
+            'wav': tk.BooleanVar(value=True),
+            'wma': tk.BooleanVar(value=True),
+            'aac': tk.BooleanVar(value=True),
+            'opus': tk.BooleanVar(value=True),
+            'other': tk.BooleanVar(value=False)  # webm, mkv, avi, etc.
+        }
+
         # Setup UI first (before starting server)
         self.setup_ui()
 
@@ -132,13 +145,46 @@ class LyricsApp:
         self.server_status_label.grid(row=0, column=1, sticky=tk.E, padx=(10, 0))
 
         # Auto-detect info
-        info_label = ttk.Label(options_frame, text="✓ Automatically detects all audio formats (MP3, M4A, FLAC, OGG, WAV, etc.)",
-                              foreground="#008000")
-        info_label.grid(row=1, column=0, columnspan=2, sticky=tk.W, pady=(10, 0))
+        self.info_label = ttk.Label(options_frame, text="✓ Processing selected file types only",
+                                   foreground="#008000")
+        self.info_label.grid(row=1, column=0, columnspan=2, sticky=tk.W, pady=(10, 0))
+
+        # File type selection frame
+        file_types_frame = ttk.LabelFrame(options_frame, text="File Types to Process", padding="5")
+        file_types_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
+
+        # Create checkboxes for file types
+        row = 0
+        col = 0
+        for file_type, var in self.file_types.items():
+            if file_type == 'other':
+                text = "Other (WebM, MKV, AVI)"
+            else:
+                text = file_type.upper()
+
+            ttk.Checkbutton(file_types_frame, text=text, variable=var).grid(
+                row=row, column=col, sticky=tk.W, padx=(0, 15)
+            )
+
+            col += 1
+            if col > 4:  # 5 columns
+                col = 0
+                row += 1
+
+        # Select/Deselect all buttons
+        select_buttons_frame = ttk.Frame(file_types_frame)
+        select_buttons_frame.grid(row=row+1, column=0, columnspan=5, pady=(5, 0))
+
+        ttk.Button(select_buttons_frame, text="Select All",
+                  command=self.select_all_file_types).grid(row=0, column=0, padx=5)
+        ttk.Button(select_buttons_frame, text="Deselect All",
+                  command=self.deselect_all_file_types).grid(row=0, column=1, padx=5)
+        ttk.Button(select_buttons_frame, text="Common Only",
+                  command=self.select_common_file_types).grid(row=0, column=2, padx=5)
 
         # Stats frame
         stats_frame = ttk.Frame(options_frame)
-        stats_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
+        stats_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
 
         ttk.Label(stats_frame, text="Session Stats:").grid(row=0, column=0, sticky=tk.W)
         self.stats_label = ttk.Label(stats_frame, text="Success: 0 | Failed: 0 | Skipped: 0",
@@ -244,6 +290,24 @@ class LyricsApp:
 
         # Start server in background thread
         threading.Thread(target=server_startup, daemon=True).start()
+
+    def select_all_file_types(self):
+        """Select all file types"""
+        for var in self.file_types.values():
+            var.set(True)
+
+    def deselect_all_file_types(self):
+        """Deselect all file types"""
+        for var in self.file_types.values():
+            var.set(False)
+
+    def select_common_file_types(self):
+        """Select only common file types (MP3, M4A, FLAC)"""
+        for file_type, var in self.file_types.items():
+            if file_type in ['mp3', 'm4a', 'flac']:
+                var.set(True)
+            else:
+                var.set(False)
 
     def on_drag_enter(self, event):
         """Handle drag enter event"""
@@ -352,14 +416,19 @@ class LyricsApp:
                     self.log(f"Scanning folder: {path.name}...")
                     self.status_var.set("Scanning for audio files...")
 
-                # Only scan by extension for performance
-                common_exts = ['.mp3', '.m4a', '.mp4', '.flac', '.ogg', '.wav', '.wma', '.aac', '.opus', '.webm', '.mkv']
+                # Get selected extensions based on user preferences
+                selected_extensions = self.get_selected_extensions()
 
-                for ext in common_exts:
+                if not selected_extensions:
+                    if show_progress:
+                        self.log("No file types selected! Please select at least one file type.")
+                    return audio_files
+
+                for ext in selected_extensions:
                     try:
                         # Use glob instead of rglob for better control
                         for file in path.rglob(f'*{ext}'):
-                            if file.is_file():
+                            if file.is_file() and self.is_audio_file_quick(file):
                                 audio_files.append(file)
 
                                 # Check file limit
@@ -379,11 +448,56 @@ class LyricsApp:
 
         return audio_files
 
+    def get_selected_extensions(self):
+        """Get list of file extensions based on user selection"""
+        extensions = []
+
+        if self.file_types['mp3'].get():
+            extensions.extend(['.mp3'])
+        if self.file_types['m4a'].get():
+            extensions.extend(['.m4a', '.mp4'])
+        if self.file_types['flac'].get():
+            extensions.extend(['.flac'])
+        if self.file_types['ogg'].get():
+            extensions.extend(['.ogg', '.oga'])
+        if self.file_types['wav'].get():
+            extensions.extend(['.wav', '.wave'])
+        if self.file_types['wma'].get():
+            extensions.extend(['.wma'])
+        if self.file_types['aac'].get():
+            extensions.extend(['.aac'])
+        if self.file_types['opus'].get():
+            extensions.extend(['.opus'])
+        if self.file_types['other'].get():
+            extensions.extend(['.webm', '.mkv', '.avi', '.wv', '.ape'])
+
+        return extensions
+
     def is_audio_file_quick(self, filepath: Path) -> bool:
-        """Quick check if file is audio based on extension only"""
-        audio_extensions = {'.mp3', '.m4a', '.mp4', '.flac', '.ogg', '.wav', '.wma',
-                          '.aac', '.opus', '.webm', '.mkv', '.avi', '.wv', '.ape'}
-        return filepath.suffix.lower() in audio_extensions
+        """Quick check if file is audio based on extension and user selection"""
+        ext = filepath.suffix.lower()
+
+        # Map extensions to our file type categories
+        extension_map = {
+            '.mp3': 'mp3',
+            '.m4a': 'm4a', '.mp4': 'm4a',  # MP4 audio files usually M4A
+            '.flac': 'flac',
+            '.ogg': 'ogg', '.oga': 'ogg',
+            '.wav': 'wav', '.wave': 'wav',
+            '.wma': 'wma',
+            '.aac': 'aac',
+            '.opus': 'opus',
+            '.webm': 'other', '.mkv': 'other', '.avi': 'other',
+            '.wv': 'other', '.ape': 'other'
+        }
+
+        # Check if extension is supported
+        if ext not in extension_map:
+            return False
+
+        # Check if user has selected this file type
+        file_type = extension_map[ext]
+        return self.file_types[file_type].get()
     
     def read_metadata(self, filepath: Path) -> dict:
         """Read metadata from audio file"""
