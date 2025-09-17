@@ -673,9 +673,13 @@ class LyricsApp:
 
         if is_japanese:
             # Try Japanese lyrics sites first
+            self.log(f"  Detected Japanese song, trying Japanese sites...")
             lyrics = self.try_japanese_sites(title, artist, headers)
             if lyrics:
+                self.log(f"  ✓ Found lyrics from Japanese site!")
                 return lyrics
+            else:
+                self.log(f"  Japanese sites failed, trying English sites...")
 
         # Try Genius (works without JavaScript)
         try:
@@ -738,6 +742,7 @@ class LyricsApp:
         """Try Japanese lyrics sites"""
         from urllib.parse import quote
 
+        self.log(f"    Trying Utaten.com...")
         # Try Utaten.com
         try:
             # Utaten search approach
@@ -760,8 +765,9 @@ class LyricsApp:
                             return lyrics
                         break  # Only try first result
         except Exception as e:
-            pass
+            self.log(f"    Utaten failed: {e}")
 
+        self.log(f"    Trying J-Lyric.net...")
         # Try J-Lyric.net
         try:
             # J-Lyric approach - direct search
@@ -785,8 +791,9 @@ class LyricsApp:
                             return lyrics
                         break  # Only try first result
         except Exception as e:
-            pass
+            self.log(f"    J-Lyric failed: {e}")
 
+        self.log(f"    All Japanese sites failed")
         return None
 
     def fetch_utaten_lyrics(self, url: str, headers: dict) -> Optional[str]:

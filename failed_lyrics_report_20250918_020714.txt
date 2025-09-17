@@ -1,0 +1,965 @@
+============================================================
+FAILED LYRICS REPORT
+Generated: 2025-09-18 02:07:14
+============================================================
+
+Total failed files: 191
+
+
+NO LYRICS FOUND ONLINE (191 files):
+----------------------------------------
+  File: 01-Introduction to _FUTARI_ [Live].flac
+    Title: Introduction to "FUTARI" [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\01-Introduction to _FUTARI_ [Live].flac
+
+  File: 02-ふたり [Live].flac
+    Title: ふたり [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\02-ふたり [Live].flac
+
+  File: 03-ドリーミング・デイ [Live].flac
+    Title: ドリーミング・デイ [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\03-ドリーミング・デイ [Live].flac
+
+  File: 04-GOD ONLY KNOWS [Live].flac
+    Title: GOD ONLY KNOWS [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\04-GOD ONLY KNOWS [Live].flac
+
+  File: 05-メリー・ゴー・ラウンド [Live].flac
+    Title: メリー・ゴー・ラウンド [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\05-メリー・ゴー・ラウンド [Live].flac
+
+  File: 06-LET'S DANCE BABY [Live].flac
+    Title: LET'S DANCE BABY [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\06-LET'S DANCE BABY [Live].flac
+
+  File: 07-LOVELAND, ISLAND [Live].flac
+    Title: LOVELAND, ISLAND [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\07-LOVELAND, ISLAND [Live].flac
+
+  File: 08-ゲット・バック・イン・ラブ [Live].flac
+    Title: ゲット・バック・イン・ラブ [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\08-ゲット・バック・イン・ラブ [Live].flac
+
+  File: 09-恋のブギウギトレイン [Live].flac
+    Title: 恋のブギウギトレイン [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\09-恋のブギウギトレイン [Live].flac
+
+  File: 10-DOWN TOWN [Live].flac
+    Title: DOWN TOWN [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\10-DOWN TOWN [Live].flac
+
+  File: 11-RIDE ON TIME [Live].flac
+    Title: RIDE ON TIME [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\11-RIDE ON TIME [Live].flac
+
+  File: 12-おやすみロージー -Angel Babyへのオマージュ- [Live](1).flac
+    Title: おやすみロージー -Angel Babyへのオマージュ- [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 2]\12-おやすみロージー -Angel Babyへのオマージュ- [Live](1).flac
+
+  File: 01-素敵な午後は [Live].flac
+    Title: 素敵な午後は [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\01-素敵な午後は [Live].flac
+
+  File: 02-THE THEME FROM BIG WAVE [Live].flac
+    Title: THE THEME FROM BIG WAVE [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\02-THE THEME FROM BIG WAVE [Live].flac
+
+  File: 03-ONLY WITH YOU [Live].flac
+    Title: ONLY WITH YOU [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\03-ONLY WITH YOU [Live].flac
+
+  File: 04-二人の夏 [Live].flac
+    Title: 二人の夏 [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\04-二人の夏 [Live].flac
+
+  File: 05-こぬか雨 [Live].flac
+    Title: こぬか雨 [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\05-こぬか雨 [Live].flac
+
+  File: 06-砂の女 [Live].flac
+    Title: 砂の女 [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\06-砂の女 [Live].flac
+
+  File: 07-アトムの子 [Live].flac
+    Title: アトムの子 [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Ray Of Hope_ Joy 1_5 [Bonus Disc]\07-アトムの子 [Live].flac
+
+  File: 01-ラスト・ステップ [Live].flac
+    Title: ラスト・ステップ [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\01-ラスト・ステップ [Live].flac
+
+  File: 02-SPARKLE [Live].flac
+    Title: SPARKLE [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\02-SPARKLE [Live].flac
+
+  File: 03-あまく危険な香り [Live].flac
+    Title: あまく危険な香り [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\03-あまく危険な香り [Live].flac
+
+  File: 04-RAINY DAY [Live].flac
+    Title: RAINY DAY [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\04-RAINY DAY [Live].flac
+
+  File: 05-プラスティック・ラヴ [Live].flac
+    Title: プラスティック・ラヴ [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\05-プラスティック・ラヴ [Live].flac
+
+  File: 06-THE WAR SONG [Live].flac
+    Title: THE WAR SONG [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\06-THE WAR SONG [Live].flac
+
+  File: 07-蒼氓 [Live].flac
+    Title: 蒼氓 [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\07-蒼氓 [Live].flac
+
+  File: 08-LA LA MEANS I LOVE YOU [Live].flac
+    Title: LA LA MEANS I LOVE YOU [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\08-LA LA MEANS I LOVE YOU [Live].flac
+
+  File: 09-DANCER [Live].flac
+    Title: DANCER [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\09-DANCER [Live].flac
+
+  File: 10-LOVE SPACE [Live].flac
+    Title: LOVE SPACE [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\JOY -TATSURO YAMASHITA LIVE- [Disc 1]\10-LOVE SPACE [Live].flac
+
+  File: 01-OVERTURE.flac
+    Title: OVERTURE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\01-OVERTURE.flac
+
+  File: 02-LOVE CELEBRATION.flac
+    Title: LOVE CELEBRATION
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\02-LOVE CELEBRATION.flac
+
+  File: 03-Let's Dance Baby.flac
+    Title: Let's Dance Baby
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\03-Let's Dance Baby.flac
+
+  File: 04-MONDAY BLUE.flac
+    Title: MONDAY BLUE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\04-MONDAY BLUE.flac
+
+  File: 05-ついておいで -Follow Me Along-.flac
+    Title: ついておいで -Follow Me Along-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\05-ついておいで -Follow Me Along-.flac
+
+  File: 06-BOMBER.flac
+    Title: BOMBER
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\06-BOMBER.flac
+
+  File: 07-潮騒 (The Whispering Sea).flac
+    Title: 潮騒 (The Whispering Sea)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\07-潮騒 (The Whispering Sea).flac
+
+  File: 08-PAPER DOLL.flac
+    Title: PAPER DOLL
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\08-PAPER DOLL.flac
+
+  File: 09-THIS COULD BE THE NIGHT.flac
+    Title: THIS COULD BE THE NIGHT
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\09-THIS COULD BE THE NIGHT.flac
+
+  File: 10-2000トンの雨 (2000t of Rain).flac
+    Title: 2000トンの雨 (2000t of Rain)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\GO AHEAD!\10-2000トンの雨 (2000t of Rain).flac
+
+  File: 01-氷のマニキュア.flac
+    Title: 氷のマニキュア
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\01-氷のマニキュア.flac
+
+  File: 02-ヘロン.flac
+    Title: ヘロン
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\02-ヘロン.flac
+
+  File: 03-FRAGILE.flac
+    Title: FRAGILE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\03-FRAGILE.flac
+
+  File: 04-DONUT SONG.flac
+    Title: DONUT SONG
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\04-DONUT SONG.flac
+
+  File: 05-月の光.flac
+    Title: 月の光
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\05-月の光.flac
+
+  File: 06-群青の炎 -ULTRAMARINE FIRE-.flac
+    Title: 群青の炎 -ULTRAMARINE FIRE-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\06-群青の炎 -ULTRAMARINE FIRE-.flac
+
+  File: 07-BOOMERANG BABY.flac
+    Title: BOOMERANG BABY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\07-BOOMERANG BABY.flac
+
+  File: 08-夏のコラージュ.flac
+    Title: 夏のコラージュ
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\08-夏のコラージュ.flac
+
+  File: 09-LAI-LA -邂逅-.flac
+    Title: LAI-LA -邂逅-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\09-LAI-LA -邂逅-.flac
+
+  File: 10-STAND IN THE LIGHT -愛の灯-.flac
+    Title: STAND IN THE LIGHT -愛の灯-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\10-STAND IN THE LIGHT -愛の灯-.flac
+
+  File: 11-セールスマンズ・ロンリネス -SALESMAN'S LONELINESS-.flac
+    Title: セールスマンズ・ロンリネス -SALESMAN'S LONELINESS-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\11-セールスマンズ・ロンリネス -SALESMAN'S LONELINESS-.flac
+
+  File: 12-サウスバウンド No.9.flac
+    Title: サウスバウンド No.9
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\12-サウスバウンド No.9.flac
+
+  File: 13-DREAMING GIRL.flac
+    Title: DREAMING GIRL
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\13-DREAMING GIRL.flac
+
+  File: 14-いつか晴れた日に.flac
+    Title: いつか晴れた日に
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\14-いつか晴れた日に.flac
+
+  File: 15-MAGIC TOUCH.flac
+    Title: MAGIC TOUCH
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\COZY\15-MAGIC TOUCH.flac
+
+  File: 01-悲しみのJODY (She Was Crying).flac
+    Title: 悲しみのJODY (She Was Crying)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\01-悲しみのJODY (She Was Crying).flac
+
+  File: 02-高気圧ガール.flac
+    Title: 高気圧ガール
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\02-高気圧ガール.flac
+
+  File: 03-夜翔 (Night-Fly).flac
+    Title: 夜翔 (Night-Fly)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\03-夜翔 (Night-Fly).flac
+
+  File: 04-GUESS I'M DUMB.flac
+    Title: GUESS I'M DUMB
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\04-GUESS I'M DUMB.flac
+
+  File: 05-ひととき.flac
+    Title: ひととき
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\05-ひととき.flac
+
+  File: 06-メリー・ゴー・ラウンド.flac
+    Title: メリー・ゴー・ラウンド
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\06-メリー・ゴー・ラウンド.flac
+
+  File: 07-BLUE MIDNIGHT.flac
+    Title: BLUE MIDNIGHT
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\07-BLUE MIDNIGHT.flac
+
+  File: 08-あしおと.flac
+    Title: あしおと
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\08-あしおと.flac
+
+  File: 09-黙想.flac
+    Title: 黙想
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\09-黙想.flac
+
+  File: 10-クリスマス・イブ.flac
+    Title: クリスマス・イブ
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MELODIES\10-クリスマス・イブ.flac
+
+  File: 01-SPARKLE.flac
+    Title: SPARKLE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\01-SPARKLE.flac
+
+  File: 02-MUSIC BOOK.flac
+    Title: MUSIC BOOK
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\02-MUSIC BOOK.flac
+
+  File: 03-INTERLUDE A Part 1.flac
+    Title: INTERLUDE A Part 1
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\03-INTERLUDE A Part 1.flac
+
+  File: 04-MORNING GLORY.flac
+    Title: MORNING GLORY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\04-MORNING GLORY.flac
+
+  File: 05-INTERLUDE A Part 2.flac
+    Title: INTERLUDE A Part 2
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\05-INTERLUDE A Part 2.flac
+
+  File: 06-FUTARI.flac
+    Title: FUTARI
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\06-FUTARI.flac
+
+  File: 07-LOVELAND, ISLAND.flac
+    Title: LOVELAND, ISLAND
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\07-LOVELAND, ISLAND.flac
+
+  File: 08-INTERLUDE B Part 1.flac
+    Title: INTERLUDE B Part 1
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\08-INTERLUDE B Part 1.flac
+
+  File: 09-LOVE TALKIN' (Honey It's You).flac
+    Title: LOVE TALKIN' (Honey It's You)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\09-LOVE TALKIN' (Honey It's You).flac
+
+  File: 10-HEY REPORTER!.flac
+    Title: HEY REPORTER!
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\10-HEY REPORTER!.flac
+
+  File: 11-INTERLUDE B Part 2.flac
+    Title: INTERLUDE B Part 2
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\11-INTERLUDE B Part 2.flac
+
+  File: 12-YOUR EYES.flac
+    Title: YOUR EYES
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\12-YOUR EYES.flac
+
+  File: 13-あまく危険な香り.flac
+    Title: あまく危険な香り
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\13-あまく危険な香り.flac
+
+  File: 14-あまく危険な香り [TV用インスト1].flac
+    Title: あまく危険な香り [TV用インスト1]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\14-あまく危険な香り [TV用インスト1].flac
+
+  File: 15-あまく危険な香り [TV用インスト2].flac
+    Title: あまく危険な香り [TV用インスト2]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\15-あまく危険な香り [TV用インスト2].flac
+
+  File: 16-EVERY NIGHT.flac
+    Title: EVERY NIGHT
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\FOR YOU\16-EVERY NIGHT.flac
+
+  File: 01-いつか (SOMEDAY).flac
+    Title: いつか (SOMEDAY)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\01-いつか (SOMEDAY).flac
+
+  File: 02-DAYDREAM.flac
+    Title: DAYDREAM
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\02-DAYDREAM.flac
+
+  File: 03-SILENT SCREAMER.flac
+    Title: SILENT SCREAMER
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\03-SILENT SCREAMER.flac
+
+  File: 04-RIDE ON TIME (アルバム・ヴァージョン).flac
+    Title: RIDE ON TIME (アルバム・ヴァージョン)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\04-RIDE ON TIME (アルバム・ヴァージョン).flac
+
+  File: 05-夏への扉 (THE DOOR INTO SUMMER).flac
+    Title: 夏への扉 (THE DOOR INTO SUMMER)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\05-夏への扉 (THE DOOR INTO SUMMER).flac
+
+  File: 06-MY SUGAR BABE.flac
+    Title: MY SUGAR BABE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\06-MY SUGAR BABE.flac
+
+  File: 07-RAINY DAY.flac
+    Title: RAINY DAY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\07-RAINY DAY.flac
+
+  File: 08-雲のゆくえに (CLOUDS).flac
+    Title: 雲のゆくえに (CLOUDS)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\08-雲のゆくえに (CLOUDS).flac
+
+  File: 09-おやすみ (KISSING GOODNIGHT).flac
+    Title: おやすみ (KISSING GOODNIGHT)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\09-おやすみ (KISSING GOODNIGHT).flac
+
+  File: 10-RIDE ON TIME (シングル・ヴァージョン).flac
+    Title: RIDE ON TIME (シングル・ヴァージョン)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\10-RIDE ON TIME (シングル・ヴァージョン).flac
+
+  File: 11-INTERLUDE I.flac
+    Title: INTERLUDE I
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\11-INTERLUDE I.flac
+
+  File: 12-INTERLUDE II.flac
+    Title: INTERLUDE II
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\12-INTERLUDE II.flac
+
+  File: 13-MY SUGAR BABE (TV用インスト・ヴァージョン).flac
+    Title: MY SUGAR BABE (TV用インスト・ヴァージョン)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RIDE ON TIME\13-MY SUGAR BABE (TV用インスト・ヴァージョン).flac
+
+  File: 01-The Theme From Big Wave.flac
+    Title: The Theme From Big Wave
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\01-The Theme From Big Wave.flac
+
+  File: 02-Jody.flac
+    Title: Jody
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\02-Jody.flac
+
+  File: 03-Only With You.flac
+    Title: Only With You
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\03-Only With You.flac
+
+  File: 04-Magic Ways.flac
+    Title: Magic Ways
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\04-Magic Ways.flac
+
+  File: 05-Your Eyes.flac
+    Title: Your Eyes
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\05-Your Eyes.flac
+
+  File: 06-I Love You... Part 2.flac
+    Title: I Love You... Part 2
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\06-I Love You... Part 2.flac
+
+  File: 07-Girls On The Beach.flac
+    Title: Girls On The Beach
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\07-Girls On The Beach.flac
+
+  File: 08-Please Let Me Wonder.flac
+    Title: Please Let Me Wonder
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\08-Please Let Me Wonder.flac
+
+  File: 09-Darlin'.flac
+    Title: Darlin'
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\09-Darlin'.flac
+
+  File: 10-Guess I'm Dumb.flac
+    Title: Guess I'm Dumb
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\10-Guess I'm Dumb.flac
+
+  File: 11-This Could Be The Night(2).flac
+    Title: This Could Be The Night
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\11-This Could Be The Night(2).flac
+
+  File: 12-I Love You... Part 1.flac
+    Title: I Love You... Part 1
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Big Wave\12-I Love You... Part 1.flac
+
+  File: 01-夜の翼.flac
+    Title: 夜の翼
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\01-夜の翼.flac
+
+  File: 02-永遠のFULL MOON.flac
+    Title: 永遠のFULL MOON
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\02-永遠のFULL MOON.flac
+
+  File: 03-RAINY WALK.flac
+    Title: RAINY WALK
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\03-RAINY WALK.flac
+
+  File: 04-STORM.flac
+    Title: STORM
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\04-STORM.flac
+
+  File: 05-FUNKY FLUSHIN'.flac
+    Title: FUNKY FLUSHIN'
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\05-FUNKY FLUSHIN'.flac
+
+  File: 06-HOT SHOT.flac
+    Title: HOT SHOT
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\06-HOT SHOT.flac
+
+  File: 07-TOUCH ME LIGHTLY.flac
+    Title: TOUCH ME LIGHTLY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\07-TOUCH ME LIGHTLY.flac
+
+  File: 08-SUNSHINE -愛の金色-.flac
+    Title: SUNSHINE -愛の金色-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\08-SUNSHINE -愛の金色-.flac
+
+  File: 09-YELLOW CAB.flac
+    Title: YELLOW CAB
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\09-YELLOW CAB.flac
+
+  File: 10-愛を描いて-LET'S KISS THE SUN-.flac
+    Title: 愛を描いて-LET'S KISS THE SUN-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\10-愛を描いて-LET'S KISS THE SUN-.flac
+
+  File: 11-夜の翼 [Karaoke].flac
+    Title: 夜の翼 [Karaoke]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\11-夜の翼 [Karaoke].flac
+
+  File: 12-永遠のFULL MOON [Live].flac
+    Title: 永遠のFULL MOON [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\12-永遠のFULL MOON [Live].flac
+
+  File: 13-FUNKY FLUSHIN' [1982ヴァージョン].flac
+    Title: FUNKY FLUSHIN' [1982ヴァージョン]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\MOONGLOW\13-FUNKY FLUSHIN' [1982ヴァージョン].flac
+
+  File: 01-新・東京ラプソディー.flac
+    Title: 新・東京ラプソディー
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\01-新・東京ラプソディー.flac
+
+  File: 02-ゲット・バック・イン・ラブ.flac
+    Title: ゲット・バック・イン・ラブ
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\02-ゲット・バック・イン・ラブ.flac
+
+  File: 03-THE GIRL IN WHITE.flac
+    Title: THE GIRL IN WHITE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\03-THE GIRL IN WHITE.flac
+
+  File: 04-寒い夏.flac
+    Title: 寒い夏
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\04-寒い夏.flac
+
+  File: 05-踊ろよ、フィッシュ.flac
+    Title: 踊ろよ、フィッシュ
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\05-踊ろよ、フィッシュ.flac
+
+  File: 06-ルミネッセンス.flac
+    Title: ルミネッセンス
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\06-ルミネッセンス.flac
+
+  File: 07-マーマレイド・グッドバイ.flac
+    Title: マーマレイド・グッドバイ
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\07-マーマレイド・グッドバイ.flac
+
+  File: 08-蒼氓.flac
+    Title: 蒼氓
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\08-蒼氓.flac
+
+  File: 09-僕の中の少年.flac
+    Title: 僕の中の少年
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\僕の中の少年\09-僕の中の少年.flac
+
+  File: 01-ターナーの汽罐車 -Turner's Steamroller- [Live].flac
+    Title: ターナーの汽罐車 -Turner's Steamroller- [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\01-ターナーの汽罐車 -Turner's Steamroller- [Live].flac
+
+  File: 02-ポケット・ミュージック [Live].flac
+    Title: ポケット・ミュージック [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\02-ポケット・ミュージック [Live].flac
+
+  File: 03-あまく危険な香り [Live].flac
+    Title: あまく危険な香り [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\03-あまく危険な香り [Live].flac
+
+  File: 04-PAPER DOLL [Live].flac
+    Title: PAPER DOLL [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\04-PAPER DOLL [Live].flac
+
+  File: 05-パレード [Live].flac
+    Title: パレード [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\05-パレード [Live].flac
+
+  File: 06-Bella Notte [Live].flac
+    Title: Bella Notte [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\06-Bella Notte [Live].flac
+
+  File: 07-Have Yourself A Merry Little Christmas [Live].flac
+    Title: Have Yourself A Merry Little Christmas [Live]
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\The Latest Acoustic Live ～Recorded Live, 2021_12_03 at Tokyo FM Hall, Tokyo～ [Bo\07-Have Yourself A Merry Little Christmas [Live].flac
+
+  File: 01-アトムの子.flac
+    Title: アトムの子
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\01-アトムの子.flac
+
+  File: 02-さよなら夏の日.flac
+    Title: さよなら夏の日
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\02-さよなら夏の日.flac
+
+  File: 03-ターナーの汽罐車 -Turner's Steamroller-.flac
+    Title: ターナーの汽罐車 -Turner's Steamroller-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\03-ターナーの汽罐車 -Turner's Steamroller-.flac
+
+  File: 04-片想い.flac
+    Title: 片想い
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\04-片想い.flac
+
+  File: 05-TOKYO'S A LONELY TOWN.flac
+    Title: TOKYO'S A LONELY TOWN
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\05-TOKYO'S A LONELY TOWN.flac
+
+  File: 06-飛遊人 -Human-.flac
+    Title: 飛遊人 -Human-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\06-飛遊人 -Human-.flac
+
+  File: 07-スプレンダー.flac
+    Title: スプレンダー
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\07-スプレンダー.flac
+
+  File: 08-MIGHTY SMILE (魔法の微笑).flac
+    Title: MIGHTY SMILE (魔法の微笑)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\08-MIGHTY SMILE (魔法の微笑).flac
+
+  File: 09-_QUEEN OF HTPE_ BLUES.flac
+    Title: "QUEEN OF HTPE" BLUES
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\09-_QUEEN OF HTPE_ BLUES.flac
+
+  File: 10-エンドレス・ゲーム.flac
+    Title: エンドレス・ゲーム
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\10-エンドレス・ゲーム.flac
+
+  File: 11-GROOVIN'.flac
+    Title: GROOVIN'
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ARTISAN\11-GROOVIN'.flac
+
+  File: 04-愛を描いて-Let's Kiss the Sun-.flac
+    Title: 愛を描いて-Let's Kiss the Sun-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\BEST PACK II (1979-1982)\04-愛を描いて-Let's Kiss the Sun-.flac
+
+  File: 15-夜の翼 -Nightwing-.flac
+    Title: 夜の翼 -Nightwing-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\BEST PACK II (1979-1982)\15-夜の翼 -Nightwing-.flac
+
+  File: 01-A Cappella Version On A Theme By Gluck.flac
+    Title: A Cappella Version On A Theme By Gluck
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\01-A Cappella Version On A Theme By Gluck.flac
+
+  File: 02-Bella Notte.flac
+    Title: Bella Notte
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\02-Bella Notte.flac
+
+  File: 03-Be My Love.flac
+    Title: Be My Love
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\03-Be My Love.flac
+
+  File: 04-Angels We Have Heard on High.flac
+    Title: Angels We Have Heard on High
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\04-Angels We Have Heard on High.flac
+
+  File: 05-Smoke Gets in Your Eyes.flac
+    Title: Smoke Gets in Your Eyes
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\05-Smoke Gets in Your Eyes.flac
+
+  File: 06-Silent Night.flac
+    Title: Silent Night
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\06-Silent Night.flac
+
+  File: 07-My Gift To You.flac
+    Title: My Gift To You
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\07-My Gift To You.flac
+
+  File: 08-It's All In The Game.flac
+    Title: It's All In The Game
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\08-It's All In The Game.flac
+
+  File: 09-Just A Lonely Christmas.flac
+    Title: Just A Lonely Christmas
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\09-Just A Lonely Christmas.flac
+
+  File: 10-Happy Holiday.flac
+    Title: Happy Holiday
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\10-Happy Holiday.flac
+
+  File: 11-Blue Christmas.flac
+    Title: Blue Christmas
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\11-Blue Christmas.flac
+
+  File: 12-White Christmas.flac
+    Title: White Christmas
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\12-White Christmas.flac
+
+  File: 13-Christmas Eve (English Version).flac
+    Title: Christmas Eve (English Version)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\13-Christmas Eve (English Version).flac
+
+  File: 14-Have Yourself A Merry Little Christmas _Short Version_.flac
+    Title: Have Yourself A Merry Little Christmas <Short Version>
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\14-Have Yourself A Merry Little Christmas _Short Version_.flac
+
+  File: 15-O Come All Ye Faithful.flac
+    Title: O Come All Ye Faithful
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\Season's Greetings\15-O Come All Ye Faithful.flac
+
+  File: 01-BLOW.flac
+    Title: BLOW
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\01-BLOW.flac
+
+  File: 02-君の声に恋してる.flac
+    Title: 君の声に恋してる
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\02-君の声に恋してる.flac
+
+  File: 03-LOVE GOES ON (その瞳は女神).flac
+    Title: LOVE GOES ON (その瞳は女神)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\03-LOVE GOES ON (その瞳は女神).flac
+
+  File: 04-HAPPY HAPPY GREETING (ORIGINAL DEMO VERSION).flac
+    Title: HAPPY HAPPY GREETING (ORIGINAL DEMO VERSION)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\04-HAPPY HAPPY GREETING (ORIGINAL DEMO VERSION).flac
+
+  File: 05-MISTY MAUVE.flac
+    Title: MISTY MAUVE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\05-MISTY MAUVE.flac
+
+  File: 06-TO WAIT FOR LOVE (IS TO WASTE YOUR LIFE AWAY).flac
+    Title: TO WAIT FOR LOVE (IS TO WASTE YOUR LIFE AWAY)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\06-TO WAIT FOR LOVE (IS TO WASTE YOUR LIFE AWAY).flac
+
+  File: 07-好・き・好・き SWEET KISS!.flac
+    Title: 好・き・好・き SWEET KISS!
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\07-好・き・好・き SWEET KISS!.flac
+
+  File: 08-潮騒 (LIVE VERSION).flac
+    Title: 潮騒 (LIVE VERSION)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\08-潮騒 (LIVE VERSION).flac
+
+  File: 09-モーニング・シャイン.flac
+    Title: モーニング・シャイン
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\09-モーニング・シャイン.flac
+
+  File: 10-FIRST LUCK -初めての幸運-.flac
+    Title: FIRST LUCK -初めての幸運-
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\10-FIRST LUCK -初めての幸運-.flac
+
+  File: 11-I DO.flac
+    Title: I DO
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\11-I DO.flac
+
+  File: 12-ヘロン (GUITAR INSTRUMENTAL).flac
+    Title: ヘロン (GUITAR INSTRUMENTAL)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\12-ヘロン (GUITAR INSTRUMENTAL).flac
+
+  File: 13-JUVENILE のテーマ ～瞳の中のRAINBOW～.flac
+    Title: JUVENILE のテーマ ～瞳の中のRAINBOW～
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\13-JUVENILE のテーマ ～瞳の中のRAINBOW～.flac
+
+  File: 14-スプリンクラー (LONG VERSION).flac
+    Title: スプリンクラー (LONG VERSION)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\14-スプリンクラー (LONG VERSION).flac
+
+  File: 15-いつか晴れた日に (STAND ALONE VERSION).flac
+    Title: いつか晴れた日に (STAND ALONE VERSION)
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\RARITIES\15-いつか晴れた日に (STAND ALONE VERSION).flac
+
+  File: 01-YOU BELONG TO ME.flac
+    Title: YOU BELONG TO ME
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\01-YOU BELONG TO ME.flac
+
+  File: 02-CLOSE YOUR EYES.flac
+    Title: CLOSE YOUR EYES
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\02-CLOSE YOUR EYES.flac
+
+  File: 03-SPANISH HARLEM.flac
+    Title: SPANISH HARLEM
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\03-SPANISH HARLEM.flac
+
+  File: 04-ALONE.flac
+    Title: ALONE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\04-ALONE.flac
+
+  File: 05-MOST OF ALL.flac
+    Title: MOST OF ALL
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\05-MOST OF ALL.flac
+
+  File: 06-REMEMBER ME BABY.flac
+    Title: REMEMBER ME BABY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\06-REMEMBER ME BABY.flac
+
+  File: 07-BLUE VELVET.flac
+    Title: BLUE VELVET
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\07-BLUE VELVET.flac
+
+  File: 08-THE WIND.flac
+    Title: THE WIND
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\08-THE WIND.flac
+
+  File: 09-DRIP DROP.flac
+    Title: DRIP DROP
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\09-DRIP DROP.flac
+
+  File: 10-THAT'S MY DESIRE.flac
+    Title: THAT'S MY DESIRE
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\ON THE STREET CORNER 1\10-THAT'S MY DESIRE.flac
+
+  File: 01-DOWN TOWN.flac
+    Title: DOWN TOWN
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\OPUS ～ALL TIME BEST 1975-2012～\01-DOWN TOWN.flac
+
+  File: 02-雨は手のひらにいっぱい.flac
+    Title: 雨は手のひらにいっぱい
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\OPUS ～ALL TIME BEST 1975-2012～\02-雨は手のひらにいっぱい.flac
+
+  File: 03-パレード.flac
+    Title: パレード
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\OPUS ～ALL TIME BEST 1975-2012～\03-パレード.flac
+
+  File: 04-WINDY LADY.flac
+    Title: WINDY LADY
+    Artist: 山下 達郎
+    Path: E:\Music\山下 達郎\OPUS ～ALL TIME BEST 1975-2012～\04-WINDY LADY.flac
+
